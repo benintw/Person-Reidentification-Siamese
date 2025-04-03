@@ -1,0 +1,16 @@
+random_seed: 42
+
+csv_path: "data/train.csv"
+data_dir: "data/train"
+image_size: 512
+train_test_split: 0.1
+train_val_split: 0.2
+batch_size: 32
+num_workers: 4
+
+horizontal_flip: 0.5
+vertical_flip: 0.5
+
+pin_memory: true
+persistent_workers: true
+prefetch_factor: 2

@@ -1,0 +1,7 @@
+# created by virtualenv automatically
+.venv/
+
+data/
+checkpoints/
+__pycache__/
+

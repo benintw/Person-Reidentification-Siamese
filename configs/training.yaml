@@ -1,0 +1,17 @@
+random_seed: 42
+split_dir: data/splits
+epochs: 20
+learning_rate: 1.0e-3
+early_stopping_patience: 5
+grad_clip: 1.0
+model: "APN_Model"
+optimizer:
+  type: "Adam"
+  params:
+    lr: 0.001
+    weight_decay: 1.0e-5
+
+logging:
+  log_dir: "./logs"
+
+compute_metrics: true

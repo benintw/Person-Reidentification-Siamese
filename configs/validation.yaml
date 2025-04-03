@@ -1,0 +1,7 @@
+random_seed: 42
+split_dir: data/splits
+model: "RoadSegModel"
+
+logging:
+  log_dir: "./logs"
+compute_metrics: true

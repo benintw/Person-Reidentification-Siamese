@@ -1,0 +1,5 @@
+save_best_only: true
+monitor: "val_loss"
+mode: "min"
+save_dir: "./checkpoints"
+save_name: "best_model.pth"

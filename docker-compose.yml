@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  # Main service for person re-identification
+  person-reid:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: person-reid:latest
+    container_name: person-reid
+    volumes:
+      # Mount data directory to persist datasets
+      - ./data:/app/data
+      # Mount checkpoints directory to persist trained models
+      - ./checkpoints:/app/checkpoints
+      # Mount results directory to persist evaluation results
+      - ./results:/app/results
+      # Mount logs directory to persist training logs
+      - ./logs:/app/logs
+      # Mount configs directory to allow configuration changes without rebuilding
+      - ./configs:/app/configs
+    # Use GPU acceleration if available
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    # Default command shows help
+    command: make help
+
+  # Jupyter notebook service for interactive development
+  notebook:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: person-reid:latest
+    container_name: person-reid-notebook
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./:/app
+    command: jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+# Define named volumes to persist data
+volumes:
+  data:
+  checkpoints:
+  results:
+  logs:

@@ -1,0 +1,31 @@
+# Model configuration
+model: apn_model
+random_seed: 42
+
+# Data configuration
+csv_path: "data/train.csv"
+data_dir: "data/train"
+image_size: 512
+train_test_split: 0.1
+train_val_split: 0.2
+
+# Inference configuration
+batch_size: 32
+num_workers: 4
+pin_memory: true
+prefetch_factor: 2
+
+# Paths
+checkpoint_path: "checkpoints/best_model.pth"
+results_dir: "results/"
+
+# Metrics
+compute_metrics: true
+
+# Visualization
+visualize_embeddings: true
+visualize_queries: true
+num_queries_to_visualize: 5
+
+# Run identifier
+run_id: "reid_inference_001"

@@ -1,0 +1,6 @@
+encoder: "efficientnet_b0"
+pretrained: true
+in_channels: 3
+classes: 1
+activation: null
+emb_size: 512
