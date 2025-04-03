@@ -1,5 +1,8 @@
 # Person Re-Identification with Siamese Network
 
+![siamese-network](images/siamese-network.webp)
+*Siamese Network illustration by [Cameron Trotter](https://towardsdatascience.com/how-to-train-your-siamese-neural-network-4c6da3259463/), Feb 19, 2021*
+
 ## Overview
 
 This project implements a person re-identification system using a Siamese network architecture. Person re-identification is the task of matching images of the same person across different camera views, which is crucial for surveillance and security applications.
